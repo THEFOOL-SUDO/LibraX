@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 480" width="100%" height="100%">
+  <defs>
+    <filter id="erShadow" x="-3%" y="-3%" width="108%" height="110%">
+      <feDropShadow dx="1" dy="3" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+
+  <rect width="100%" height="100%" fill="#ffffff" rx="8"/>
+  <rect x="15" y="15" width="890" height="450" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+
+  <!-- Title banner -->
+  <text x="35" y="42" font-family="DejaVu Sans, Arial" font-size="14" font-weight="bold" fill="#0f172a">
+    Figure 3: Relational Database Entity-Relationship (ER) Schema &amp; Constraint Model
+  </text>
+  <text x="35" y="60" font-family="DejaVu Sans, Arial" font-size="10.5" fill="#64748b">
+    Normalized 3NF schema mapping 5 core entities with indexed primary keys, foreign keys, and cascading relationships.
+  </text>
+
+  <!-- ENTITY 1: USERS (Top Left) -->
+  <g filter="url(#erShadow)">
+    <rect x="40" y="80" width="220" height="180" rx="6" fill="#ffffff" stroke="#1e3a8a" stroke-width="1.2"/>
+    <rect x="40" y="80" width="220" height="28" rx="6" fill="#1e3a8a"/>
+    <text x="150" y="99" font-family="DejaVu Sans, Arial" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">USERS</text>
+    <text x="50" y="125" font-family="DejaVu Sans Mono" font-size="9" font-weight="bold" fill="#dc2626">PK id: BIGINT AUTO</text>
+    <text x="50" y="142" font-family="DejaVu Sans Mono" font-size="8.5" fill="#0284c7">UK email: VARCHAR(191)</text>
+    <text x="50" y="157" font-family="DejaVu Sans Mono" font-size="8.5" fill="#475569">   password_hash: VARCHAR</text>
+    <text x="50" y="172" font-family="DejaVu Sans Mono" font-size="8.5" fill="#475569">   name: VARCHAR(100)</text>
+    <text x="50" y="187" font-family="DejaVu Sans Mono" font-size="8.5" fill="#475569">   role: ENUM(ADMIN,STUDENT)</text>
+    <text x="50" y="202" font-family="DejaVu Sans Mono" font-size="8.5" fill="#475569">   student_id: VARCHAR(50)</text>
+    <text x="50" y="217" font-family="DejaVu Sans Mono" font-size="8.5" fill="#475569">   is_active: BOOLEAN</text>
+    <text x="50" y="232" font-family="DejaVu Sans Mono" font-size="8.5" fill="#475569">   member_since: DATETIME</text>
+    <text x="50" y="247" font-family="DejaVu Sans Mono" font-size="8.5" fill="#64748b">   created_at, updated_at</text>
+  </g>
+
+  <!-- ENTITY 2: BOOKS (Bottom Left) -->
+  <g filter="url(#erShadow)">
+    <rect x="40" y="280" width="220" height="170" rx="6" fill="#ffffff" stroke="#047857" stroke-width="1.2"/>
+    <rect x="40" y="280" width="220" height="28" rx="6" fill="#047857"/>
+    <text x="150" y="299" font-family="DejaVu Sans, Arial" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">BOOKS</text>
+    <text x="50" y="325" font-family="DejaVu Sans Mono" font-size="9" font-weight="bold" fill="#dc2626">PK id: BIGINT AUTO</text>
+    <text x="50" y="342" font-family="DejaVu Sans Mono" font-size="8.5" fill="#0284c7">UK isbn: VARCHAR(50)</text>
+    <text x="50" y="357" font-family="DejaVu Sans Mono" font-size="8.5" fill="#475569">   title: VARCHAR(255)</text>
+    <text x="50" y="372" font-family="DejaVu Sans Mono" font-size="8.5" fill="#475569">   author: VARCHAR(150)</text>
+    <text x="50" y="387" font-family="DejaVu Sans Mono" font-size="8.5" fill="#475569">   genre: VARCHAR(100)</text>
+    <text x="50" y="402" font-family="DejaVu Sans Mono" font-size="8.5" fill="#475569">   published_year: INT</text>
+    <text x="50" y="417" font-family="DejaVu Sans Mono" font-size="8.5" fill="#475569">   total_copies: INT</text>
+    <text x="50" y="432" font-family="DejaVu Sans Mono" font-size="8.5" fill="#059669">   available_copies: INT</text>
+  </g>
+
+  <!-- ENTITY 3: BORROW_RECORDS (Center Junction) -->
+  <g filter="url(#erShadow)">
+    <rect x="340" y="160" width="240" height="185" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+    <rect x="340" y="160" width="240" height="28" rx="6" fill="#b45309"/>
+    <text x="460" y="179" font-family="DejaVu Sans, Arial" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">BORROW_RECORDS</text>
+    <text x="350" y="205" font-family="DejaVu Sans Mono" font-size="9" font-weight="bold" fill="#dc2626">PK id: BIGINT AUTO</text>
+    <text x="350" y="222" font-family="DejaVu Sans Mono" font-size="8.5" fill="#2563eb">FK student_id: BIGINT</text>
+    <text x="350" y="237" font-family="DejaVu Sans Mono" font-size="8.5" fill="#047857">FK book_id: BIGINT</text>
+    <text x="350" y="252" font-family="DejaVu Sans Mono" font-size="8.5" fill="#2563eb">FK issued_by: BIGINT (opt)</text>
+    <text x="350" y="267" font-family="DejaVu Sans Mono" font-size="8.5" fill="#475569">   borrow_date: DATETIME</text>
+    <text x="350" y="282" font-family="DejaVu Sans Mono" font-size="8.5" fill="#d97706">   due_date: DATETIME</text>
+    <text x="350" y="297" font-family="DejaVu Sans Mono" font-size="8.5" fill="#475569">   return_date: DATETIME (opt)</text>
+    <text x="350" y="312" font-family="DejaVu Sans Mono" font-size="8.5" fill="#475569">   status: VARCHAR(20)</text>
+    <text x="350" y="327" font-family="DejaVu Sans Mono" font-size="8" fill="#64748b">   created_at, updated_at</text>
+  </g>
+
+  <!-- ENTITY 4: FINE_RECORDS (Top Right) -->
+  <g filter="url(#erShadow)">
+    <rect x="660" y="80" width="220" height="160" rx="6" fill="#ffffff" stroke="#b91c1c" stroke-width="1.2"/>
+    <rect x="660" y="80" width="220" height="28" rx="6" fill="#b91c1c"/>
+    <text x="770" y="99" font-family="DejaVu Sans, Arial" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">FINE_RECORDS</text>
+    <text x="670" y="125" font-family="DejaVu Sans Mono" font-size="9" font-weight="bold" fill="#dc2626">PK id: BIGINT AUTO</text>
+    <text x="670" y="142" font-family="DejaVu Sans Mono" font-size="8.5" fill="#2563eb">FK student_id: BIGINT</text>
+    <text x="670" y="157" font-family="DejaVu Sans Mono" font-size="8.5" fill="#b45309">FK borrow_record_id: BIGINT</text>
+    <text x="670" y="172" font-family="DejaVu Sans Mono" font-size="8.5" fill="#475569">   amount: DECIMAL(10,2)</text>
+    <text x="670" y="187" font-family="DejaVu Sans Mono" font-size="8.5" fill="#475569">   reason: VARCHAR(255)</text>
+    <text x="670" y="202" font-family="DejaVu Sans Mono" font-size="8.5" fill="#059669">   is_paid: BOOLEAN</text>
+    <text x="670" y="217" font-family="DejaVu Sans Mono" font-size="8.5" fill="#475569">   paid_at: DATETIME</text>
+  </g>
+
+  <!-- ENTITY 5: BOOK_REQUESTS (Bottom Right) -->
+  <g filter="url(#erShadow)">
+    <rect x="660" y="270" width="220" height="150" rx="6" fill="#ffffff" stroke="#6d28d9" stroke-width="1.2"/>
+    <rect x="660" y="270" width="220" height="28" rx="6" fill="#6d28d9"/>
+    <text x="770" y="289" font-family="DejaVu Sans, Arial" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">BOOK_REQUESTS</text>
+    <text x="670" y="315" font-family="DejaVu Sans Mono" font-size="9" font-weight="bold" fill="#dc2626">PK id: BIGINT AUTO</text>
+    <text x="670" y="332" font-family="DejaVu Sans Mono" font-size="8.5" fill="#2563eb">FK student_id: BIGINT</text>
+    <text x="670" y="347" font-family="DejaVu Sans Mono" font-size="8.5" fill="#475569">   title: VARCHAR(255)</text>
+    <text x="670" y="362" font-family="DejaVu Sans Mono" font-size="8.5" fill="#475569">   author: VARCHAR(150)</text>
+    <text x="670" y="377" font-family="DejaVu Sans Mono" font-size="8.5" fill="#475569">   reason: TEXT</text>
+    <text x="670" y="392" font-family="DejaVu Sans Mono" font-size="8.5" fill="#475569">   status: VARCHAR(20)</text>
+  </g>
+
+  <!-- RELATIONAL CONNECTING LINES -->
+  <!-- Users to BorrowRecords (1:N) -->
+  <path d="M 260 170 L 340 210" stroke="#1e3a8a" stroke-width="2" stroke-dasharray="4,2" fill="none"/>
+  <text x="295" y="180" font-family="DejaVu Sans" font-size="9" font-weight="bold" fill="#1e3a8a">1:N</text>
+
+  <!-- Books to BorrowRecords (1:N) -->
+  <path d="M 260 340 L 340 270" stroke="#047857" stroke-width="2" stroke-dasharray="4,2" fill="none"/>
+  <text x="295" y="320" font-family="DejaVu Sans" font-size="9" font-weight="bold" fill="#047857">1:N</text>
+
+  <!-- BorrowRecords to FineRecords (1:1 / 1:N) -->
+  <path d="M 580 210 L 660 160" stroke="#b91c1c" stroke-width="2" stroke-dasharray="4,2" fill="none"/>
+  <text x="615" y="175" font-family="DejaVu Sans" font-size="9" font-weight="bold" fill="#b91c1c">1:N</text>
+
+  <!-- Users to BookRequests (1:N) -->
+  <path d="M 260 210 L 300 210 L 300 440 L 660 380" stroke="#6d28d9" stroke-width="1.8" stroke-dasharray="4,2" fill="none"/>
+  <text x="310" y="440" font-family="DejaVu Sans" font-size="9" font-weight="bold" fill="#6d28d9">1:N</text>
+</svg>

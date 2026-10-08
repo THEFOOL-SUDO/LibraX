@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" width="100%" height="100%">
+  <defs>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a8a"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="secGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="jwtGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+    </linearGradient>
+    <linearGradient id="authGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.1"/>
+    </filter>
+    <marker id="arrowNavy" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#1e40af"/>
+    </marker>
+    <marker id="arrowEmerald" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#059669"/>
+    </marker>
+    <marker id="arrowPurple" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#7c3aed"/>
+    </marker>
+  </defs>
+
+  <rect width="100%" height="100%" fill="#ffffff" rx="8"/>
+  <rect x="12" y="12" width="876" height="456" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+
+  <!-- Diagram Title Header -->
+  <text x="35" y="42" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#0f172a">
+    Figure 4: Stateless JWT Authentication Protocol &amp; Spring Security Filter Chain
+  </text>
+  <text x="35" y="60" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" fill="#64748b">
+    Sequence and interceptor lifecycle: Patron credential verification, HMAC-SHA512 token minting, and Bearer claim validation.
+  </text>
+
+  <!-- Lifeline Columns / Swimlanes -->
+  <!-- Col 1: React 18 SPA (x=110) -->
+  <rect x="50" y="80" width="130" height="38" rx="6" fill="#0284c7" stroke="#0369a1" stroke-width="1.2" filter="url(#cardShadow)"/>
+  <text x="115" y="96" font-family="DejaVu Sans, Arial" font-size="10" font-weight="bold" fill="#ffffff" text-anchor="middle">Client SPA</text>
+  <text x="115" y="110" font-family="DejaVu Sans Mono" font-size="8.5" fill="#e0f2fe" text-anchor="middle">React 18 + Axios</text>
+  <line x1="115" y1="120" x2="115" y2="445" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="4,4"/>
+
+  <!-- Col 2: Security Filter Chain (x=290) -->
+  <rect x="225" y="80" width="140" height="38" rx="6" fill="#1e3a8a" stroke="#172554" stroke-width="1.2" filter="url(#cardShadow)"/>
+  <text x="295" y="96" font-family="DejaVu Sans, Arial" font-size="10" font-weight="bold" fill="#ffffff" text-anchor="middle">SecurityFilterChain</text>
+  <text x="295" y="110" font-family="DejaVu Sans Mono" font-size="8" fill="#c7d2fe" text-anchor="middle">JwtAuthenticationFilter</text>
+  <line x1="295" y1="120" x2="295" y2="445" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="4,4"/>
+
+  <!-- Col 3: Authentication Manager / BCrypt (x=485) -->
+  <rect x="415" y="80" width="145" height="38" rx="6" fill="#059669" stroke="#047857" stroke-width="1.2" filter="url(#cardShadow)"/>
+  <text x="487" y="96" font-family="DejaVu Sans, Arial" font-size="10" font-weight="bold" fill="#ffffff" text-anchor="middle">AuthManager &amp; BCrypt</text>
+  <text x="487" y="110" font-family="DejaVu Sans Mono" font-size="8" fill="#d1fae5" text-anchor="middle">UserDetailsService</text>
+  <line x1="487" y1="120" x2="487" y2="445" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="4,4"/>
+
+  <!-- Col 4: JwtTokenProvider (x=670) -->
+  <rect x="605" y="80" width="135" height="38" rx="6" fill="#7c3aed" stroke="#6d28d9" stroke-width="1.2" filter="url(#cardShadow)"/>
+  <text x="672" y="96" font-family="DejaVu Sans, Arial" font-size="10" font-weight="bold" fill="#ffffff" text-anchor="middle">JwtTokenProvider</text>
+  <text x="672" y="110" font-family="DejaVu Sans Mono" font-size="8" fill="#ede9fe" text-anchor="middle">HMAC-SHA512</text>
+  <line x1="672" y1="120" x2="672" y2="445" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="4,4"/>
+
+  <!-- Col 5: Protected Controller (x=815) -->
+  <rect x="760" y="80" width="115" height="38" rx="6" fill="#0f172a" stroke="#020617" stroke-width="1.2" filter="url(#cardShadow)"/>
+  <text x="817" y="96" font-family="DejaVu Sans, Arial" font-size="10" font-weight="bold" fill="#ffffff" text-anchor="middle">REST Controller</text>
+  <text x="817" y="110" font-family="DejaVu Sans Mono" font-size="8" fill="#94a3b8" text-anchor="middle">@PreAuthorize</text>
+  <line x1="817" y1="120" x2="817" y2="445" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="4,4"/>
+
+  <!-- PHASE 1: LOGIN & TOKEN ISSUANCE (y=130 to 260) -->
+  <rect x="40" y="132" width="830" height="120" rx="6" fill="#eff6ff" fill-opacity="0.6" stroke="#bfdbfe" stroke-width="1"/>
+  <rect x="48" y="138" width="160" height="18" rx="3" fill="#1e3a8a"/>
+  <text x="128" y="151" font-family="DejaVu Sans" font-size="9" font-weight="bold" fill="#ffffff" text-anchor="middle">PHASE 1: Credential Authentication</text>
+
+  <!-- Step 1: POST /api/auth/login -->
+  <line x1="115" y1="172" x2="480" y2="172" stroke="#1e40af" stroke-width="1.6" marker-end="url(#arrowNavy)"/>
+  <text x="250" y="167" font-family="DejaVu Sans Mono" font-size="8.5" font-weight="bold" fill="#1e3a8a">1. POST /api/auth/login {email, password}</text>
+
+  <!-- Step 2: BCrypt Verification in AuthManager -->
+  <rect x="487" y="178" width="16" height="32" rx="2" fill="#10b981"/>
+  <path d="M 503 186 C 530 186, 530 202, 503 202" fill="none" stroke="#047857" stroke-width="1.4" marker-end="url(#arrowEmerald)"/>
+  <text x="535" y="196" font-family="DejaVu Sans" font-size="8" fill="#065f46">2. BCrypt.matches(raw, hash)</text>
+
+  <!-- Step 3: Mint Token in JwtTokenProvider -->
+  <line x1="487" y1="216" x2="665" y2="216" stroke="#7c3aed" stroke-width="1.6" marker-end="url(#arrowPurple)"/>
+  <text x="525" y="212" font-family="DejaVu Sans" font-size="8" font-weight="bold" fill="#6d28d9">3. generateToken(Auth)</text>
+
+  <!-- Step 4: Token returned to Client -->
+  <line x1="672" y1="234" x2="120" y2="234" stroke="#059669" stroke-width="1.6" stroke-dasharray="4,3" marker-end="url(#arrowEmerald)"/>
+  <text x="360" y="230" font-family="DejaVu Sans Mono" font-size="8.5" font-weight="bold" fill="#047857">4. 200 OK {accessToken: "eyJhbGciOi...", role: "ROLE_STUDENT"}</text>
+
+  <!-- Token Storage Callout -->
+  <rect x="70" y="240" width="160" height="18" rx="3" fill="#ffffff" stroke="#0284c7" stroke-width="0.8"/>
+  <text x="150" y="252" font-family="DejaVu Sans Mono" font-size="7.5" fill="#0369a1" text-anchor="middle">localStorage['libra_token']</text>
+
+
+  <!-- PHASE 2: STATELESS AUTHORIZED DISPATCH (y=265 to 440) -->
+  <rect x="40" y="268" width="830" height="175" rx="6" fill="#f5f3ff" fill-opacity="0.6" stroke="#ddd6fe" stroke-width="1"/>
+  <rect x="48" y="274" width="180" height="18" rx="3" fill="#6d28d9"/>
+  <text x="138" y="287" font-family="DejaVu Sans" font-size="9" font-weight="bold" fill="#ffffff" text-anchor="middle">PHASE 2: Stateless Bearer Authorization</text>
+
+  <!-- Step 5: GET /api/borrow/my-borrows with Bearer Header -->
+  <line x1="115" y1="310" x2="288" y2="310" stroke="#1e40af" stroke-width="1.6" marker-end="url(#arrowNavy)"/>
+  <text x="135" y="304" font-family="DejaVu Sans Mono" font-size="8.2" font-weight="bold" fill="#1e3a8a">5. GET /api/borrow/my-borrows [Authorization: Bearer &lt;JWT&gt;]</text>
+
+  <!-- Step 6: JwtAuthenticationFilter intercepts & calls provider -->
+  <rect x="287" y="315" width="16" height="60" rx="2" fill="#3b82f6"/>
+  <line x1="303" y1="326" x2="665" y2="326" stroke="#7c3aed" stroke-width="1.6" marker-end="url(#arrowPurple)"/>
+  <text x="430" y="322" font-family="DejaVu Sans" font-size="8" font-weight="bold" fill="#6d28d9">6. validateToken() &amp; extractClaims()</text>
+
+  <!-- Token Claims detail box -->
+  <rect x="620" y="334" width="150" height="42" rx="4" fill="#ffffff" stroke="#a855f7" stroke-width="0.8"/>
+  <text x="625" y="346" font-family="DejaVu Sans Mono" font-size="7" fill="#4c1d95">claims.getSubject() = 42</text>
+  <text x="625" y="357" font-family="DejaVu Sans Mono" font-size="7" fill="#4c1d95">claims.get("role") = STUDENT</text>
+  <text x="625" y="368" font-family="DejaVu Sans Mono" font-size="7" fill="#047857">isTokenExpired() == false</text>
+
+  <!-- Step 7: SecurityContext populated -->
+  <path d="M 287 348 C 260 348, 260 368, 287 368" fill="none" stroke="#1e40af" stroke-width="1.4" marker-end="url(#arrowNavy)"/>
+  <text x="195" y="362" font-family="DejaVu Sans" font-size="7.5" fill="#1e3a8a">7. setAuthentication()</text>
+
+  <!-- Step 8: Pass through DispatcherServlet to Controller -->
+  <line x1="303" y1="384" x2="810" y2="384" stroke="#059669" stroke-width="1.6" marker-end="url(#arrowEmerald)"/>
+  <text x="490" y="380" font-family="DejaVu Sans Mono" font-size="8.2" font-weight="bold" fill="#047857">8. DispatcherServlet -&gt; BookController / BorrowController</text>
+
+  <!-- Controller @PreAuthorize verification -->
+  <rect x="809" y="388" width="16" height="35" rx="2" fill="#0f172a"/>
+  <text x="735" y="412" font-family="DejaVu Sans Mono" font-size="7" fill="#0f172a">@PreAuthorize OK</text>
+
+  <!-- Step 9: 200 OK Response with JSON payload -->
+  <line x1="809" y1="425" x2="120" y2="425" stroke="#0284c7" stroke-width="1.6" stroke-dasharray="4,3" marker-end="url(#arrowNavy)"/>
+  <text x="380" y="421" font-family="DejaVu Sans Mono" font-size="8.5" font-weight="bold" fill="#0284c7">9. 200 OK [{borrowId: 104, bookTitle: "Clean Code", dueDate: "2026-10-21"}]</text>
+</svg>

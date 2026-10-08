@@ -1,0 +1,322 @@
+[
+  {
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "isbn": "978-0-06-112008-4",
+    "genre": "Fiction",
+    "totalCopies": 5,
+    "availableCopies": 2,
+    "coverImage": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=300&h=400&fit=crop",
+    "description": "A novel about racial injustice in the Deep South, seen through the eyes of young Scout Finch."
+  },
+  {
+    "title": "1984",
+    "author": "George Orwell",
+    "isbn": "978-0-451-52493-5",
+    "genre": "Dystopian",
+    "totalCopies": 4,
+    "availableCopies": 1,
+    "coverImage": "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=300&h=400&fit=crop",
+    "description": "A dystopian social science fiction novel and cautionary tale about the dangers of totalitarianism."
+  },
+  {
+    "title": "Pride and Prejudice",
+    "author": "Jane Austen",
+    "isbn": "978-0-14-143951-8",
+    "genre": "Romance",
+    "totalCopies": 6,
+    "availableCopies": 3,
+    "coverImage": "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=300&h=400&fit=crop",
+    "description": "A romantic novel following Elizabeth Bennet as she deals with issues of manners, morality, and marriage."
+  },
+  {
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "isbn": "978-0-7432-7356-5",
+    "genre": "Fiction",
+    "totalCopies": 3,
+    "availableCopies": 0,
+    "coverImage": "https://images.unsplash.com/photo-1495446815901-a7297e633e8d?w=300&h=400&fit=crop",
+    "description": "A story of the mysteriously wealthy Jay Gatsby and his love for Daisy Buchanan, set in the Jazz Age."
+  },
+  {
+    "title": "One Hundred Years of Solitude",
+    "author": "Gabriel Garcia Marquez",
+    "isbn": "978-0-06-088328-7",
+    "genre": "Magical Realism",
+    "totalCopies": 4,
+    "availableCopies": 2,
+    "coverImage": "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=300&h=400&fit=crop",
+    "description": "The multi-generational story of the Buendia family in the fictional town of Macondo."
+  },
+  {
+    "title": "The Catcher in the Rye",
+    "author": "J.D. Salinger",
+    "isbn": "978-0-316-76948-0",
+    "genre": "Fiction",
+    "totalCopies": 5,
+    "availableCopies": 4,
+    "coverImage": "https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=300&h=400&fit=crop",
+    "description": "The story of Holden Caulfield, a teenager navigating the complexities of adolescence in New York City."
+  },
+  {
+    "title": "Brave New World",
+    "author": "Aldous Huxley",
+    "isbn": "978-0-06-085052-4",
+    "genre": "Dystopian",
+    "totalCopies": 3,
+    "availableCopies": 1,
+    "coverImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=400&fit=crop",
+    "description": "A dystopian novel set in a futuristic World State of genetically engineered citizens."
+  },
+  {
+    "title": "The Lord of the Rings",
+    "author": "J.R.R. Tolkien",
+    "isbn": "978-0-618-64015-7",
+    "genre": "Fantasy",
+    "totalCopies": 4,
+    "availableCopies": 2,
+    "coverImage": "https://images.unsplash.com/photo-1621351183012-e2f9972dd9bf?w=300&h=400&fit=crop",
+    "description": "An epic high-fantasy novel following the quest to destroy the One Ring."
+  },
+  {
+    "title": "Crime and Punishment",
+    "author": "Fyodor Dostoevsky",
+    "isbn": "978-0-14-044913-6",
+    "genre": "Philosophical Fiction",
+    "totalCopies": 3,
+    "availableCopies": 2,
+    "coverImage": "https://images.unsplash.com/photo-1476275466078-4007374efbbe?w=300&h=400&fit=crop",
+    "description": "A psychological exploration of morality, following Raskolnikov after he commits murder."
+  },
+  {
+    "title": "The Odyssey",
+    "author": "Homer",
+    "isbn": "978-0-14-026886-7",
+    "genre": "Epic Poetry",
+    "totalCopies": 5,
+    "availableCopies": 3,
+    "coverImage": "https://images.unsplash.com/photo-1532012197267-da84d127e765?w=300&h=400&fit=crop",
+    "description": "One of the oldest works of Western literature, following Odysseus's journey home."
+  },
+  {
+    "title": "Don Quixote",
+    "author": "Miguel de Cervantes",
+    "isbn": "978-0-06-093434-7",
+    "genre": "Satire",
+    "totalCopies": 2,
+    "availableCopies": 1,
+    "coverImage": "https://images.unsplash.com/photo-1589998059171-988d887df646?w=300&h=400&fit=crop",
+    "description": "The adventures of a nobleman who reads too many chivalric romances and sets out as a knight-errant."
+  },
+  {
+    "title": "Jane Eyre",
+    "author": "Charlotte Bronte",
+    "isbn": "978-0-14-144114-6",
+    "genre": "Gothic Romance",
+    "totalCopies": 4,
+    "availableCopies": 2,
+    "coverImage": "https://images.unsplash.com/photo-1524578271613-d550eacf6090?w=300&h=400&fit=crop",
+    "description": "The story of a young orphaned woman and her journey from an abusive childhood to love."
+  },
+  {
+    "title": "Moby-Dick",
+    "author": "Herman Melville",
+    "isbn": "978-0-14-243724-7",
+    "genre": "Adventure",
+    "totalCopies": 3,
+    "availableCopies": 3,
+    "coverImage": "https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=300&h=400&fit=crop",
+    "description": "Captain Ahab's obsessive quest to kill the great white whale, Moby Dick."
+  },
+  {
+    "title": "War and Peace",
+    "author": "Leo Tolstoy",
+    "isbn": "978-0-14-044793-4",
+    "genre": "Historical Fiction",
+    "totalCopies": 3,
+    "availableCopies": 1,
+    "coverImage": "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=300&h=400&fit=crop",
+    "description": "A sweeping chronicle of Russian society during the Napoleonic Wars."
+  },
+  {
+    "title": "The Alchemist",
+    "author": "Paulo Coelho",
+    "isbn": "978-0-06-112241-5",
+    "genre": "Fiction",
+    "totalCopies": 6,
+    "availableCopies": 4,
+    "coverImage": "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=300&h=400&fit=crop",
+    "description": "A shepherd boy's journey to find treasure and discover his Personal Legend."
+  },
+  {
+    "title": "Hamlet",
+    "author": "William Shakespeare",
+    "isbn": "978-0-7432-7712-9",
+    "genre": "Tragedy",
+    "totalCopies": 5,
+    "availableCopies": 3,
+    "coverImage": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=300&h=400&fit=crop",
+    "description": "The tragedy of Prince Hamlet of Denmark, who seeks revenge for his father's murder."
+  },
+  {
+    "title": "Harry Potter and the Philosopher's Stone",
+    "author": "J.K. Rowling",
+    "isbn": "978-0-7475-3269-9",
+    "genre": "Fantasy",
+    "totalCopies": 8,
+    "availableCopies": 3,
+    "coverImage": "https://images.unsplash.com/photo-1618666012174-83b441d4c193?w=300&h=400&fit=crop",
+    "description": "A young orphan discovers he is a wizard and begins his education at Hogwarts School of Witchcraft and Wizardry."
+  },
+  {
+    "title": "Harry Potter and the Chamber of Secrets",
+    "author": "J.K. Rowling",
+    "isbn": "978-0-7475-3849-3",
+    "genre": "Fantasy",
+    "totalCopies": 7,
+    "availableCopies": 4,
+    "coverImage": "https://images.unsplash.com/photo-1632435499152-18ef45eded48?w=300&h=400&fit=crop",
+    "description": "Harry returns to Hogwarts where a mysterious force is petrifying students one by one."
+  },
+  {
+    "title": "Harry Potter and the Prisoner of Azkaban",
+    "author": "J.K. Rowling",
+    "isbn": "978-0-7475-4215-5",
+    "genre": "Fantasy",
+    "totalCopies": 6,
+    "availableCopies": 2,
+    "coverImage": "https://images.unsplash.com/photo-1600189261867-30e5ffe7b8da?w=300&h=400&fit=crop",
+    "description": "Harry learns about Sirius Black, a dangerous prisoner who has escaped from Azkaban."
+  },
+  {
+    "title": "Harry Potter and the Goblet of Fire",
+    "author": "J.K. Rowling",
+    "isbn": "978-0-7475-4624-5",
+    "genre": "Fantasy",
+    "totalCopies": 5,
+    "availableCopies": 1,
+    "coverImage": "https://images.unsplash.com/photo-1589998059171-988d887df646?w=300&h=400&fit=crop",
+    "description": "Harry is mysteriously entered into the dangerous Triwizard Tournament."
+  },
+  {
+    "title": "Harry Potter and the Order of the Phoenix",
+    "author": "J.K. Rowling",
+    "isbn": "978-0-7475-5100-3",
+    "genre": "Fantasy",
+    "totalCopies": 5,
+    "availableCopies": 3,
+    "coverImage": "https://images.unsplash.com/photo-1535666669445-e8ace763b28e?w=300&h=400&fit=crop",
+    "description": "Harry forms a secret student group to fight against the dark forces rising in the wizarding world."
+  },
+  {
+    "title": "Harry Potter and the Half-Blood Prince",
+    "author": "J.K. Rowling",
+    "isbn": "978-0-7475-8108-6",
+    "genre": "Fantasy",
+    "totalCopies": 5,
+    "availableCopies": 2,
+    "coverImage": "https://images.unsplash.com/photo-1510172951991-856a654063f9?w=300&h=400&fit=crop",
+    "description": "Harry discovers an old potions textbook with powerful annotations by the mysterious Half-Blood Prince."
+  },
+  {
+    "title": "Harry Potter and the Deathly Hallows",
+    "author": "J.K. Rowling",
+    "isbn": "978-0-545-01022-1",
+    "genre": "Fantasy",
+    "totalCopies": 6,
+    "availableCopies": 4,
+    "coverImage": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=300&h=400&fit=crop",
+    "description": "Harry, Ron, and Hermione set out to destroy Voldemort's Horcruxes in the epic conclusion."
+  },
+  {
+    "title": "Stranger Things: Suspicious Minds",
+    "author": "Gwenda Bond",
+    "isbn": "978-1-9848-0072-3",
+    "genre": "Science Fiction",
+    "totalCopies": 4,
+    "availableCopies": 2,
+    "coverImage": "https://images.unsplash.com/photo-1614624532983-4ce03382d63d?w=300&h=400&fit=crop",
+    "description": "A prequel novel exploring the origins of Eleven's mother and the Hawkins National Laboratory."
+  },
+  {
+    "title": "Stranger Things: Darkness on the Edge of Town",
+    "author": "Adam Christopher",
+    "isbn": "978-1-9848-0073-0",
+    "genre": "Science Fiction",
+    "totalCopies": 3,
+    "availableCopies": 2,
+    "coverImage": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=300&h=400&fit=crop",
+    "description": "Chief Hopper's past in New York is explored as he recounts a terrifying case from his detective days."
+  },
+  {
+    "title": "Stranger Things: Rebel Robin",
+    "author": "A.R. Capetta",
+    "isbn": "978-0-593-12583-7",
+    "genre": "Science Fiction",
+    "totalCopies": 4,
+    "availableCopies": 3,
+    "coverImage": "https://images.unsplash.com/photo-1531988042231-d39a9cc12a9a?w=300&h=400&fit=crop",
+    "description": "Robin Buckley's story before the events at Starcourt Mall, navigating high school and finding herself."
+  },
+  {
+    "title": "Stranger Things: Lucas on the Line",
+    "author": "Suyi Davies",
+    "isbn": "978-0-593-12585-1",
+    "genre": "Science Fiction",
+    "totalCopies": 3,
+    "availableCopies": 2,
+    "coverImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=400&fit=crop",
+    "description": "Lucas struggles between fitting in with the basketball team and staying loyal to his friends."
+  },
+  {
+    "title": "Goosebumps: Welcome to Dead House",
+    "author": "R.L. Stine",
+    "isbn": "978-0-590-45365-4",
+    "genre": "Horror",
+    "totalCopies": 6,
+    "availableCopies": 4,
+    "coverImage": "https://images.unsplash.com/photo-1633477189729-9290b3261d0a?w=300&h=400&fit=crop",
+    "description": "Amanda and Josh move to a creepy town called Dark Falls where the neighbors have a deadly secret."
+  },
+  {
+    "title": "Goosebumps: Night of the Living Dummy",
+    "author": "R.L. Stine",
+    "isbn": "978-0-590-46617-3",
+    "genre": "Horror",
+    "totalCopies": 5,
+    "availableCopies": 3,
+    "coverImage": "https://images.unsplash.com/photo-1535666669445-e8ace763b28e?w=300&h=400&fit=crop",
+    "description": "Lindy finds a ventriloquist dummy named Slappy who seems to have a mind of his own."
+  },
+  {
+    "title": "Goosebumps: Monster Blood",
+    "author": "R.L. Stine",
+    "isbn": "978-0-590-45366-1",
+    "genre": "Horror",
+    "totalCopies": 4,
+    "availableCopies": 3,
+    "coverImage": "https://images.unsplash.com/photo-1476275466078-4007374efbbe?w=300&h=400&fit=crop",
+    "description": "Evan finds a mysterious can of green goo that keeps growing... and growing... and growing."
+  },
+  {
+    "title": "Goosebumps: The Haunted Mask",
+    "author": "R.L. Stine",
+    "isbn": "978-0-590-45682-2",
+    "genre": "Horror",
+    "totalCopies": 5,
+    "availableCopies": 4,
+    "coverImage": "https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=300&h=400&fit=crop",
+    "description": "Carly Beth finds a terrifyingly realistic Halloween mask, but she can't take it off."
+  },
+  {
+    "title": "Goosebumps: Say Cheese and Die!",
+    "author": "R.L. Stine",
+    "isbn": "978-0-590-45368-5",
+    "genre": "Horror",
+    "totalCopies": 4,
+    "availableCopies": 2,
+    "coverImage": "https://images.unsplash.com/photo-1524578271613-d550eacf6090?w=300&h=400&fit=crop",
+    "description": "Greg finds a camera that predicts terrible events - every photo shows a disaster waiting to happen."
+  }
+]

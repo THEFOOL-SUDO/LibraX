@@ -1,0 +1,217 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" width="100%" height="100%">
+  <defs>
+    <linearGradient id="canvasGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e1b4b"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d97706"/>
+      <stop offset="100%" stop-color="#fbbf24"/>
+    </linearGradient>
+    <linearGradient id="azureGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+    <linearGradient id="leatherNavy" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a8a"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="leatherCrimson" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#881337"/>
+      <stop offset="100%" stop-color="#e11d48"/>
+    </linearGradient>
+    <linearGradient id="pagesGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef3c7"/>
+      <stop offset="100%" stop-color="#fde68a"/>
+    </linearGradient>
+    <linearGradient id="mathBoxGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <filter id="glowGold" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="glowAzure" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="3" dy="5" stdDeviation="4" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+    <marker id="arrowHead" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#38bdf8"/>
+    </marker>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="100%" height="100%" fill="#ffffff" rx="8"/>
+  <rect x="12" y="12" width="876" height="456" rx="8" fill="url(#canvasGrad)" stroke="#334155" stroke-width="1.5"/>
+
+  <!-- Diagram Title Header -->
+  <text x="35" y="42" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">
+    Figure 5: Procedural Three.js WebGL Scene Graph, PBR Anatomy &amp; Parallax Pipeline
+  </text>
+  <text x="35" y="60" font-family="DejaVu Sans, Arial, sans-serif" font-size="10.5" fill="#94a3b8">
+    Hierarchical 3D rendering pipeline: PerspectiveCamera frustum, dual orbiting dynamic point lights, and composite hardcover PBR book meshes.
+  </text>
+
+  <!-- LEFT SECTION: Scene Graph Hierarchy (x=35 to 440) -->
+  <rect x="35" y="80" width="415" height="365" rx="6" fill="#1e293b" fill-opacity="0.6" stroke="#475569" stroke-width="1"/>
+  <text x="50" y="105" font-family="DejaVu Sans, Arial" font-size="12" font-weight="bold" fill="#38bdf8">
+    A. Scene Graph &amp; Frustum Hierarchy
+  </text>
+
+  <!-- Node: Perspective Camera -->
+  <g filter="url(#softShadow)">
+    <rect x="50" y="120" width="385" height="48" rx="5" fill="#0f172a" stroke="#0284c7" stroke-width="1.2"/>
+    <polygon points="66,138 78,138 82,143 82,152 66,152" fill="#ffffff"/>
+    <circle cx="74" cy="146" r="3" fill="#0369a1"/>
+    <text x="98" y="141" font-family="DejaVu Sans, Arial" font-size="11" font-weight="bold" fill="#f8fafc">PerspectiveCamera</text>
+    <text x="98" y="157" font-family="DejaVu Sans Mono, monospace" font-size="9" fill="#93c5fd">FOV: 45° | Aspect: W/H | Near: 0.1 | Far: 100.0 | Pos: (0, 0, 18)</text>
+  </g>
+
+  <!-- Parallax Lerp Equation Box -->
+  <rect x="50" y="176" width="385" height="52" rx="5" fill="url(#mathBoxGrad)" stroke="#38bdf8" stroke-width="0.8" stroke-dasharray="3,3"/>
+  <text x="62" y="195" font-family="DejaVu Sans, Arial" font-size="9.5" font-weight="bold" fill="#7dd3fc">Critically Damped Cursor Parallax Filter:</text>
+  <text x="62" y="214" font-family="DejaVu Sans Mono, monospace" font-size="9.5" fill="#f1f5f9">
+    θ<tspan font-size="7.5" dy="2">x</tspan><tspan font-size="9.5" dy="-2">(t+Δt) = lerp(θ</tspan><tspan font-size="7.5" dy="2">x</tspan><tspan font-size="9.5" dy="-2">(t), Y</tspan><tspan font-size="7.5" dy="2">mouse</tspan><tspan font-size="9.5" dy="-2">·α, δ)  [α=0.00035, δ=0.05]</tspan>
+  </text>
+
+  <!-- Node: Lighting Subsystem -->
+  <g filter="url(#softShadow)">
+    <rect x="50" y="236" width="385" height="68" rx="5" fill="#0f172a" stroke="#eab308" stroke-width="1.2"/>
+    <text x="65" y="255" font-family="DejaVu Sans, Arial" font-size="10.5" font-weight="bold" fill="#fde047">
+      Dual Orbiting Dynamic Lighting Subsystem
+    </text>
+    <!-- Light 1 -->
+    <circle cx="75" cy="280" r="12" fill="url(#goldGrad)" filter="url(#glowGold)"/>
+    <text x="95" y="278" font-family="DejaVu Sans, Arial" font-size="9.5" font-weight="bold" fill="#fef08a">Amber PointLight (#f59e0b, 2.2 I)</text>
+    <text x="95" y="292" font-family="DejaVu Sans Mono" font-size="8.5" fill="#cbd5e1">Pos: (12·cos(ωt), 6·sin(ωt), 10) [Phase 0]</text>
+    <!-- Light 2 -->
+    <circle cx="265" cy="280" r="12" fill="url(#azureGrad)" filter="url(#glowAzure)"/>
+    <text x="285" y="278" font-family="DejaVu Sans, Arial" font-size="9.5" font-weight="bold" fill="#7dd3fc">Azure PointLight (#38bdf8, 1.8 I)</text>
+    <text x="285" y="292" font-family="DejaVu Sans Mono" font-size="8.5" fill="#cbd5e1">Pos: (12·cos(ωt+π), 6·sin(ωt+π), -5) [Phase π]</text>
+  </g>
+
+  <!-- Node: Particle Subsystem -->
+  <g filter="url(#softShadow)">
+    <rect x="50" y="312" width="385" height="58" rx="5" fill="#0f172a" stroke="#8b5cf6" stroke-width="1.2"/>
+    <text x="65" y="331" font-family="DejaVu Sans, Arial" font-size="10.5" font-weight="bold" fill="#c4b5fd">
+      Knowledge Constellation (Points &amp; BufferGeometry)
+    </text>
+    <text x="65" y="348" font-family="DejaVu Sans, Arial" font-size="9" fill="#e2e8f0">
+      • 750 Stardust Vertices distributed randomly in radius R ∈ [15, 35]
+    </text>
+    <text x="65" y="362" font-family="DejaVu Sans Mono" font-size="8.5" fill="#a78bfa">
+      Harmonic Drift: y<tspan font-size="6.5" dy="2">i</tspan><tspan font-size="8.5" dy="-2">(t) = y</tspan><tspan font-size="6.5" dy="2">i,0</tspan><tspan font-size="8.5" dy="-2"> + A</tspan><tspan font-size="6.5" dy="2">i</tspan><tspan font-size="8.5" dy="-2">·sin(ω</tspan><tspan font-size="6.5" dy="2">i</tspan><tspan font-size="8.5" dy="-2">t + φ</tspan><tspan font-size="6.5" dy="2">i</tspan><tspan font-size="8.5" dy="-2">) [A</tspan><tspan font-size="6.5" dy="2">i</tspan><tspan font-size="8.5" dy="-2"> ∈ [0.4, 1.2]]</tspan>
+    </text>
+  </g>
+
+  <!-- Node: 14 Books Distribution -->
+  <rect x="50" y="378" width="385" height="55" rx="5" fill="#0f172a" stroke="#10b981" stroke-width="1.2"/>
+  <text x="65" y="397" font-family="DejaVu Sans, Arial" font-size="10.5" font-weight="bold" fill="#6ee7b7">
+    Spatial Distribution: 14 Procedural Volumes
+  </text>
+  <text x="65" y="413" font-family="DejaVu Sans, Arial" font-size="9" fill="#e2e8f0">
+    3 Depth Planes: Foreground (z ∈ [0, 2]), Mid-ground (z ∈ [-6, -2]), Deep (z ∈ [-12, -8])
+  </text>
+  <text x="65" y="426" font-family="DejaVu Sans Mono" font-size="8.5" fill="#a7f3d0">
+    Continuous Rotation: ΔR<tspan font-size="6.5" dy="2">x</tspan><tspan font-size="8.5" dy="-2"> = 0.002, ΔR</tspan><tspan font-size="6.5" dy="2">y</tspan><tspan font-size="8.5" dy="-2"> = 0.004, ΔR</tspan><tspan font-size="6.5" dy="2">z</tspan><tspan font-size="8.5" dy="-2"> = 0.001 rad/frame</tspan>
+  </text>
+
+
+  <!-- RIGHT SECTION: Composite Book Anatomy & PBR Shading (x=465 to 865) -->
+  <rect x="465" y="80" width="400" height="365" rx="6" fill="#1e293b" fill-opacity="0.6" stroke="#475569" stroke-width="1"/>
+  <text x="480" y="105" font-family="DejaVu Sans, Arial" font-size="12" font-weight="bold" fill="#f59e0b">
+    B. Composite Hardcover Mesh &amp; PBR Anatomy
+  </text>
+
+  <!-- 3D Book Isometric Schematic Illustration -->
+  <g transform="translate(485, 125)">
+    <!-- Decorative background glow for book -->
+    <ellipse cx="140" cy="90" rx="120" ry="40" fill="#1e3a8a" opacity="0.3" filter="url(#glowAzure)"/>
+
+    <!-- Hardcover Back Plate -->
+    <path d="M 40 40 L 220 10 L 240 110 L 60 140 Z" fill="#172554" stroke="#1e40af" stroke-width="1.2"/>
+    
+    <!-- Paper Text Block (Pages) -->
+    <path d="M 48 44 L 214 17 L 230 105 L 64 132 Z" fill="url(#pagesGrad)" stroke="#d97706" stroke-width="0.8"/>
+    <!-- Page Leaf Lines -->
+    <line x1="214" y1="22" x2="230" y2="108" stroke="#b45309" stroke-width="0.5" stroke-dasharray="2,2"/>
+    <line x1="208" y1="24" x2="224" y2="110" stroke="#b45309" stroke-width="0.5" stroke-dasharray="2,2"/>
+    <line x1="64" y1="132" x2="230" y2="105" stroke="#b45309" stroke-width="0.8"/>
+
+    <!-- Hardcover Front Plate -->
+    <path d="M 30 20 L 210 -10 L 230 90 L 50 120 Z" fill="url(#leatherNavy)" stroke="#60a5fa" stroke-width="1.5" filter="url(#softShadow)"/>
+    
+    <!-- Gilded Cover Filigree / Border -->
+    <path d="M 45 22 L 195 -3 L 212 85 L 62 110 Z" fill="none" stroke="url(#goldGrad)" stroke-width="1.4" filter="url(#glowGold)"/>
+    <text x="125" y="55" font-family="DejaVu Serif, Georgia, serif" font-size="12" font-weight="bold" fill="#fef08a" transform="rotate(-9 125 55)" text-anchor="middle">LIBRAX</text>
+
+    <!-- Spine -->
+    <path d="M 30 20 L 40 40 L 60 140 L 50 120 Z" fill="#0f172a" stroke="#1e3a8a" stroke-width="1.2"/>
+    <!-- Gold Spine Ribs -->
+    <line x1="33" y1="38" x2="43" y2="58" stroke="#fbbf24" stroke-width="2"/>
+    <line x1="38" y1="62" x2="48" y2="82" stroke="#fbbf24" stroke-width="2"/>
+    <line x1="43" y1="86" x2="53" y2="106" stroke="#fbbf24" stroke-width="2"/>
+
+    <!-- Annotation Callouts -->
+    <!-- Callout 1: Cover Leather -->
+    <circle cx="160" cy="20" r="3" fill="#60a5fa"/>
+    <line x1="160" y1="20" x2="270" y2="20" stroke="#60a5fa" stroke-width="1"/>
+    <rect x="270" y="8" width="105" height="24" rx="3" fill="#0f172a" stroke="#3b82f6" stroke-width="0.8"/>
+    <text x="275" y="20" font-family="DejaVu Sans" font-size="7.5" font-weight="bold" fill="#93c5fd">Cover &amp; Spine Shell</text>
+    <text x="275" y="28" font-family="DejaVu Sans Mono" font-size="6.5" fill="#cbd5e1">Rough: 0.35 | Met: 0.1</text>
+
+    <!-- Callout 2: Text Block Pages -->
+    <circle cx="150" cy="120" r="3" fill="#f59e0b"/>
+    <line x1="150" y1="120" x2="270" y2="120" stroke="#f59e0b" stroke-width="1"/>
+    <rect x="270" y="108" width="105" height="24" rx="3" fill="#0f172a" stroke="#f59e0b" stroke-width="0.8"/>
+    <text x="275" y="120" font-family="DejaVu Sans" font-size="7.5" font-weight="bold" fill="#fde047">Ivory Deckle Leaves</text>
+    <text x="275" y="128" font-family="DejaVu Sans Mono" font-size="6.5" fill="#cbd5e1">#fef3c7 | Rough: 0.90</text>
+
+    <!-- Callout 3: Gilded Accents -->
+    <circle cx="43" cy="86" r="3" fill="#fbbf24"/>
+    <line x1="43" y1="86" x2="-10" y2="86" stroke="#fbbf24" stroke-width="1"/>
+    <rect x="-115" y="74" width="100" height="24" rx="3" fill="#0f172a" stroke="#fbbf24" stroke-width="0.8"/>
+    <text x="-110" y="86" font-family="DejaVu Sans" font-size="7.5" font-weight="bold" fill="#fef08a">Metallic Embossing</text>
+    <text x="-110" y="94" font-family="DejaVu Sans Mono" font-size="6.5" fill="#cbd5e1">Metal: 0.85 | Specular</text>
+  </g>
+
+  <!-- Sub-mesh Material Properties Table -->
+  <g transform="translate(480, 290)">
+    <rect x="0" y="0" width="370" height="142" rx="5" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+    
+    <!-- Table Header -->
+    <rect x="0" y="0" width="370" height="24" rx="5" fill="#1e293b"/>
+    <text x="10" y="16" font-family="DejaVu Sans" font-size="8.5" font-weight="bold" fill="#38bdf8">Mesh Component</text>
+    <text x="120" y="16" font-family="DejaVu Sans" font-size="8.5" font-weight="bold" fill="#38bdf8">Geometry &amp; PBR</text>
+    <text x="250" y="16" font-family="DejaVu Sans" font-size="8.5" font-weight="bold" fill="#38bdf8">Harmonic Color Tokens</text>
+    
+    <!-- Row 1 -->
+    <line x1="0" y1="24" x2="370" y2="24" stroke="#334155" stroke-width="0.8"/>
+    <text x="10" y="42" font-family="DejaVu Sans" font-size="8" font-weight="bold" fill="#f8fafc">Binding (Covers)</text>
+    <text x="120" y="42" font-family="DejaVu Sans Mono" font-size="7.5" fill="#94a3b8">Box(2.2, 3.1, 0.45)</text>
+    <text x="250" y="42" font-family="DejaVu Sans" font-size="7.5" fill="#60a5fa">Navy, Crimson, Forest, Amber</text>
+
+    <!-- Row 2 -->
+    <line x1="0" y1="54" x2="370" y2="54" stroke="#334155" stroke-width="0.8"/>
+    <text x="10" y="72" font-family="DejaVu Sans" font-size="8" font-weight="bold" fill="#f8fafc">Text Block (Leaves)</text>
+    <text x="120" y="72" font-family="DejaVu Sans Mono" font-size="7.5" fill="#94a3b8">Box(2.05, 2.95, 0.38)</text>
+    <text x="250" y="72" font-family="DejaVu Sans" font-size="7.5" fill="#fde047">Ivory (#fef3c7), Matte</text>
+
+    <!-- Row 3 -->
+    <line x1="0" y1="84" x2="370" y2="84" stroke="#334155" stroke-width="0.8"/>
+    <text x="10" y="102" font-family="DejaVu Sans" font-size="8" font-weight="bold" fill="#f8fafc">Foil Ribs &amp; Filigree</text>
+    <text x="120" y="102" font-family="DejaVu Sans Mono" font-size="7.5" fill="#94a3b8">Cylinder &amp; Wireframe</text>
+    <text x="250" y="102" font-family="DejaVu Sans" font-size="7.5" fill="#fbbf24">Gilded Gold (#fbbf24, 0.85M)</text>
+
+    <!-- Row 4 -->
+    <line x1="0" y1="114" x2="370" y2="114" stroke="#334155" stroke-width="0.8"/>
+    <text x="10" y="132" font-family="DejaVu Sans" font-size="8" font-weight="bold" fill="#f8fafc">Constellation Dust</text>
+    <text x="120" y="132" font-family="DejaVu Sans Mono" font-size="7.5" fill="#94a3b8">BufferGeometry (750v)</text>
+    <text x="250" y="132" font-family="DejaVu Sans" font-size="7.5" fill="#c4b5fd">Celestial Opal (#e0e7ff, 0.8A)</text>
+  </g>
+</svg>

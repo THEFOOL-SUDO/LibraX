@@ -1,0 +1,182 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 540" width="100%" height="100%">
+  <defs>
+    <linearGradient id="clientGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+    <linearGradient id="secGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4338ca"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </linearGradient>
+    <linearGradient id="ctrlGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a8a"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="srvGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#047857"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+    <linearGradient id="jpaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b45309"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <linearGradient id="dbGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#334155"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-5%" y="-5%" width="112%" height="120%">
+      <feDropShadow dx="1" dy="3" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.10"/>
+    </filter>
+    <marker id="connArrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#475569"/>
+    </marker>
+  </defs>
+
+  <rect width="100%" height="100%" fill="#ffffff" rx="8"/>
+  <rect x="15" y="15" width="890" height="510" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+
+  <!-- Title banner -->
+  <text x="35" y="42" font-family="DejaVu Sans, Arial" font-size="14" font-weight="bold" fill="#0f172a">
+    Figure 2: Layered Hexagonal Enterprise System Architecture Blueprint
+  </text>
+  <text x="35" y="60" font-family="DejaVu Sans, Arial" font-size="10.5" fill="#64748b">
+    Decoupled multi-tier decomposition from WebGL presentation to transactional persistence and dual DB engines.
+  </text>
+
+  <!-- TIER 1: CLIENT PRESENTATION TIER -->
+  <g filter="url(#cardShadow)">
+    <rect x="35" y="80" width="850" height="65" rx="6" fill="#f0f9ff" stroke="#bae6fd" stroke-width="1"/>
+    <rect x="35" y="80" width="160" height="65" rx="6" fill="url(#clientGrad)"/>
+    <text x="115" y="107" font-family="DejaVu Sans, Arial" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">Presentation Tier</text>
+    <text x="115" y="125" font-family="DejaVu Sans, Arial" font-size="9" fill="#e0f2fe" text-anchor="middle">Client Browser SPA</text>
+    
+    <!-- Sub-boxes -->
+    <rect x="210" y="90" width="150" height="45" rx="4" fill="#ffffff" stroke="#7dd3fc" stroke-width="0.8"/>
+    <text x="285" y="110" font-family="DejaVu Sans, Arial" font-size="9.5" font-weight="bold" fill="#0369a1" text-anchor="middle">React 18 + Vite 5</text>
+    <text x="285" y="125" font-family="DejaVu Sans, Arial" font-size="8.5" fill="#64748b" text-anchor="middle">Glassmorphism UI</text>
+
+    <rect x="375" y="90" width="170" height="45" rx="4" fill="#ffffff" stroke="#7dd3fc" stroke-width="0.8"/>
+    <text x="460" y="110" font-family="DejaVu Sans, Arial" font-size="9.5" font-weight="bold" fill="#0369a1" text-anchor="middle">Three.js WebGL Engine</text>
+    <text x="460" y="125" font-family="DejaVu Sans, Arial" font-size="8.5" fill="#64748b" text-anchor="middle">14 3D Books + Particles</text>
+
+    <rect x="560" y="90" width="155" height="45" rx="4" fill="#ffffff" stroke="#7dd3fc" stroke-width="0.8"/>
+    <text x="637" y="110" font-family="DejaVu Sans, Arial" font-size="9.5" font-weight="bold" fill="#0369a1" text-anchor="middle">Axios Interceptor</text>
+    <text x="637" y="125" font-family="DejaVu Sans, Arial" font-size="8.5" fill="#64748b" text-anchor="middle">Bearer Token Injection</text>
+
+    <rect x="730" y="90" width="140" height="45" rx="4" fill="#ffffff" stroke="#7dd3fc" stroke-width="0.8"/>
+    <text x="800" y="110" font-family="DejaVu Sans, Arial" font-size="9.5" font-weight="bold" fill="#0369a1" text-anchor="middle">Vite Proxy</text>
+    <text x="800" y="125" font-family="DejaVu Sans, Arial" font-size="8.5" fill="#64748b" text-anchor="middle">:5173 $arrow.r$ :5000</text>
+  </g>
+
+  <!-- Flow connector down -->
+  <path d="M 460 145 L 460 162" stroke="#475569" stroke-width="2" marker-end="url(#connArrow)" fill="none"/>
+
+  <!-- TIER 2: SECURITY & GATEWAY TIER -->
+  <g filter="url(#cardShadow)">
+    <rect x="35" y="165" width="850" height="60" rx="6" fill="#eef2ff" stroke="#c7d2fe" stroke-width="1"/>
+    <rect x="35" y="165" width="160" height="60" rx="6" fill="url(#secGrad)"/>
+    <text x="115" y="190" font-family="DejaVu Sans, Arial" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">Security &amp; Gateway</text>
+    <text x="115" y="208" font-family="DejaVu Sans, Arial" font-size="9" fill="#e0e7ff" text-anchor="middle">Spring Security 6</text>
+
+    <rect x="210" y="173" width="205" height="44" rx="4" fill="#ffffff" stroke="#a5b4fc" stroke-width="0.8"/>
+    <text x="312" y="192" font-family="DejaVu Sans, Arial" font-size="9" font-weight="bold" fill="#3730a3" text-anchor="middle">JwtAuthenticationFilter</text>
+    <text x="312" y="206" font-family="DejaVu Sans, Arial" font-size="8" fill="#64748b" text-anchor="middle">OncePerRequestFilter Claims Parser</text>
+
+    <rect x="430" y="173" width="210" height="44" rx="4" fill="#ffffff" stroke="#a5b4fc" stroke-width="0.8"/>
+    <text x="535" y="192" font-family="DejaVu Sans, Arial" font-size="9" font-weight="bold" fill="#3730a3" text-anchor="middle">SecurityFilterChain</text>
+    <text x="535" y="206" font-family="DejaVu Sans, Arial" font-size="8" fill="#64748b" text-anchor="middle">CORS • CSRF Disabled • Stateless</text>
+
+    <rect x="655" y="173" width="215" height="44" rx="4" fill="#ffffff" stroke="#a5b4fc" stroke-width="0.8"/>
+    <text x="762" y="192" font-family="DejaVu Sans, Arial" font-size="9" font-weight="bold" fill="#3730a3" text-anchor="middle">RBAC / PreAuthorize</text>
+    <text x="762" y="206" font-family="DejaVu Sans, Arial" font-size="8" fill="#64748b" text-anchor="middle">ROLE_ADMIN &amp; ROLE_STUDENT</text>
+  </g>
+
+  <!-- Flow connector down -->
+  <path d="M 460 225 L 460 242" stroke="#475569" stroke-width="2" marker-end="url(#connArrow)" fill="none"/>
+
+  <!-- TIER 3: REST CONTROLLER TIER -->
+  <g filter="url(#cardShadow)">
+    <rect x="35" y="245" width="850" height="60" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+    <rect x="35" y="245" width="160" height="60" rx="6" fill="url(#ctrlGrad)"/>
+    <text x="115" y="270" font-family="DejaVu Sans, Arial" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">Controller Tier</text>
+    <text x="115" y="288" font-family="DejaVu Sans, Arial" font-size="9" fill="#dbeafe" text-anchor="middle">REST Endpoints</text>
+
+    <!-- Controllers -->
+    <rect x="210" y="253" width="95" height="44" rx="4" fill="#ffffff" stroke="#93c5fd" stroke-width="0.8"/>
+    <text x="257" y="272" font-family="DejaVu Sans, Arial" font-size="9" font-weight="bold" fill="#1d4ed8" text-anchor="middle">AuthCtrl</text>
+    <text x="257" y="286" font-family="DejaVu Sans Mono, monospace" font-size="7.5" fill="#64748b" text-anchor="middle">/api/auth</text>
+
+    <rect x="315" y="253" width="95" height="44" rx="4" fill="#ffffff" stroke="#93c5fd" stroke-width="0.8"/>
+    <text x="362" y="272" font-family="DejaVu Sans, Arial" font-size="9" font-weight="bold" fill="#1d4ed8" text-anchor="middle">BookCtrl</text>
+    <text x="362" y="286" font-family="DejaVu Sans Mono, monospace" font-size="7.5" fill="#64748b" text-anchor="middle">/api/books</text>
+
+    <rect x="420" y="253" width="105" height="44" rx="4" fill="#ffffff" stroke="#93c5fd" stroke-width="0.8"/>
+    <text x="472" y="272" font-family="DejaVu Sans, Arial" font-size="9" font-weight="bold" fill="#1d4ed8" text-anchor="middle">BorrowCtrl</text>
+    <text x="472" y="286" font-family="DejaVu Sans Mono, monospace" font-size="7.5" fill="#64748b" text-anchor="middle">/api/borrow</text>
+
+    <rect x="535" y="253" width="95" height="44" rx="4" fill="#ffffff" stroke="#93c5fd" stroke-width="0.8"/>
+    <text x="582" y="272" font-family="DejaVu Sans, Arial" font-size="9" font-weight="bold" fill="#1d4ed8" text-anchor="middle">FineCtrl</text>
+    <text x="582" y="286" font-family="DejaVu Sans Mono, monospace" font-size="7.5" fill="#64748b" text-anchor="middle">/api/fines</text>
+
+    <rect x="640" y="253" width="105" height="44" rx="4" fill="#ffffff" stroke="#93c5fd" stroke-width="0.8"/>
+    <text x="692" y="272" font-family="DejaVu Sans, Arial" font-size="9" font-weight="bold" fill="#1d4ed8" text-anchor="middle">StudentCtrl</text>
+    <text x="692" y="286" font-family="DejaVu Sans Mono, monospace" font-size="7.5" fill="#64748b" text-anchor="middle">/api/students</text>
+
+    <rect x="755" y="253" width="115" height="44" rx="4" fill="#ffffff" stroke="#93c5fd" stroke-width="0.8"/>
+    <text x="812" y="272" font-family="DejaVu Sans, Arial" font-size="9" font-weight="bold" fill="#1d4ed8" text-anchor="middle">RequestCtrl</text>
+    <text x="812" y="286" font-family="DejaVu Sans Mono, monospace" font-size="7.5" fill="#64748b" text-anchor="middle">/api/requests</text>
+  </g>
+
+  <!-- Flow connector down -->
+  <path d="M 460 305 L 460 322" stroke="#475569" stroke-width="2" marker-end="url(#connArrow)" fill="none"/>
+
+  <!-- TIER 4: SERVICE TIER -->
+  <g filter="url(#cardShadow)">
+    <rect x="35" y="325" width="850" height="60" rx="6" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="1"/>
+    <rect x="35" y="325" width="160" height="60" rx="6" fill="url(#srvGrad)"/>
+    <text x="115" y="350" font-family="DejaVu Sans, Arial" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">Service Layer</text>
+    <text x="115" y="368" font-family="DejaVu Sans, Arial" font-size="9" fill="#d1fae5" text-anchor="middle">@Transactional Core</text>
+
+    <rect x="210" y="333" width="190" height="44" rx="4" fill="#ffffff" stroke="#6ee7b7" stroke-width="0.8"/>
+    <text x="305" y="352" font-family="DejaVu Sans, Arial" font-size="9" font-weight="bold" fill="#047857" text-anchor="middle">Borrow &amp; Return Logic</text>
+    <text x="305" y="366" font-family="DejaVu Sans, Arial" font-size="8" fill="#64748b" text-anchor="middle">Atomic Inventory Decrement</text>
+
+    <rect x="415" y="333" width="220" height="44" rx="4" fill="#ffffff" stroke="#6ee7b7" stroke-width="0.8"/>
+    <text x="525" y="352" font-family="DejaVu Sans, Arial" font-size="9" font-weight="bold" fill="#047857" text-anchor="middle">Fine Accrual Engine</text>
+    <text x="525" y="366" font-family="DejaVu Sans, Arial" font-size="8" fill="#64748b" text-anchor="middle">ChronoUnit.DAYS * finePerDay</text>
+
+    <rect x="650" y="333" width="220" height="44" rx="4" fill="#ffffff" stroke="#6ee7b7" stroke-width="0.8"/>
+    <text x="760" y="352" font-family="DejaVu Sans, Arial" font-size="9" font-weight="bold" fill="#047857" text-anchor="middle">GlobalExceptionHandler</text>
+    <text x="760" y="366" font-family="DejaVu Sans, Arial" font-size="8" fill="#64748b" text-anchor="middle">404, 400, 403, 500 JSON Mapping</text>
+  </g>
+
+  <!-- Flow connector down -->
+  <path d="M 460 385 L 460 402" stroke="#475569" stroke-width="2" marker-end="url(#connArrow)" fill="none"/>
+
+  <!-- TIER 5: PERSISTENCE & DATA TIER -->
+  <g filter="url(#cardShadow)">
+    <rect x="35" y="405" width="850" height="95" rx="6" fill="#fffbeb" stroke="#fde68a" stroke-width="1"/>
+    <rect x="35" y="405" width="160" height="95" rx="6" fill="url(#jpaGrad)"/>
+    <text x="115" y="445" font-family="DejaVu Sans, Arial" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">Persistence Tier</text>
+    <text x="115" y="465" font-family="DejaVu Sans, Arial" font-size="9" fill="#fef3c7" text-anchor="middle">Data JPA / Hibernate</text>
+
+    <!-- Spring Data Repositories -->
+    <rect x="210" y="415" width="270" height="75" rx="4" fill="#ffffff" stroke="#fcd34d" stroke-width="0.8"/>
+    <text x="345" y="435" font-family="DejaVu Sans, Arial" font-size="9.5" font-weight="bold" fill="#b45309" text-anchor="middle">5 JPA Repositories (JPQL)</text>
+    <text x="345" y="452" font-family="DejaVu Sans, Arial" font-size="8" fill="#64748b" text-anchor="middle">UserRepo • BookRepo • BorrowRepo</text>
+    <text x="345" y="468" font-family="DejaVu Sans, Arial" font-size="8" fill="#64748b" text-anchor="middle">FineRecordRepo • BookRequestRepo</text>
+    <text x="345" y="482" font-family="DejaVu Sans Mono, monospace" font-size="7.5" fill="#d97706" text-anchor="middle">Index-optimized JOIN FETCH queries</text>
+
+    <!-- Dual DB Profiles -->
+    <rect x="500" y="415" width="370" height="75" rx="4" fill="url(#dbGrad)" stroke="#475569" stroke-width="0.8"/>
+    <text x="685" y="435" font-family="DejaVu Sans, Arial" font-size="10" font-weight="bold" fill="#38bdf8" text-anchor="middle">Dual Database Runtime Engines</text>
+    
+    <rect x="515" y="445" width="165" height="36" rx="4" fill="#1e293b"/>
+    <text x="597" y="460" font-family="DejaVu Sans, Arial" font-size="8.5" font-weight="bold" fill="#4ade80" text-anchor="middle">MySQL 8.0 (Default)</text>
+    <text x="597" y="473" font-family="DejaVu Sans, Arial" font-size="7.5" fill="#94a3b8" text-anchor="middle">Docker Container :3306</text>
+
+    <rect x="690" y="445" width="165" height="36" rx="4" fill="#1e293b"/>
+    <text x="772" y="460" font-family="DejaVu Sans, Arial" font-size="8.5" font-weight="bold" fill="#facc15" text-anchor="middle">H2 In-Memory (Dev)</text>
+    <text x="772" y="473" font-family="DejaVu Sans, Arial" font-size="7.5" fill="#94a3b8" text-anchor="middle">Zero-Install Console :5000</text>
+  </g>
+</svg>
